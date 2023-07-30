@@ -1,6 +1,4 @@
-A1='sg1socks.elcavlaw.com'
-A2='sg2socks.elcavlaw.com'
-A3='sg3socks.elcavlaw.com'
+A1='api.ssh.elcavlaw.com'
 
 LOOP_DELAY=5
 
@@ -35,7 +33,7 @@ endscript() {
 trap endscript 2 15
 check(){
  for ((i=0; i<"${#HOSTS[*]}"; i++)); do
-  for R in "${A1}" "${A2}" "${A3}"; do
+  for R in "${A1}"; do
    T="${HOSTS[$i]}"
      $(timeout -k .3 .3 ${_DIG} @${T} ${R})  && M=31 || M=32;
    echo -e "\e[1;${M}m\$ R:${R} D:${T}\e[0m"
