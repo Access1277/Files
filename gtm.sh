@@ -4,7 +4,7 @@ A3='sg3socks.elcavlaw.com'
 
 LOOP_DELAY=5
 
-declare -a HOSTS=('openai.com')
+declare -a HOSTS=('openai.com' 'tiktok.com' 'mobilelegends.com' 'youtube.com' 'google.com')
 DIG_EXEC="DEFAULT"
 
 CUSTOM_DIG=/data/data/com.termux/files/home/go/bin/fastdig
