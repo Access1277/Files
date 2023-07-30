@@ -2,7 +2,7 @@ A1='api.ssh.elcavlaw.com'
 
 LOOP_DELAY=5
 
-declare -a HOSTS=('openai.com' 'tiktok.com' 'mobilelegends.com' 'youtube.com' 'google.com')
+declare -a HOSTS=('169.254.1.0' 'openai.com' 'tiktok.com' 'mobilelegends.com' 'youtube.com' 'google.com')
 DIG_EXEC="DEFAULT"
 
 CUSTOM_DIG=/data/data/com.termux/files/home/go/bin/fastdig
