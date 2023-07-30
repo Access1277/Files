@@ -1,13 +1,10 @@
-NS='sdns.art1.bagito.tech'
-A='art1.bagito.tech'
-NS1='sdns.jkim.bagito.tech'
-A1='jkim.bagito.tech'
-A2='sg1socks.elcavlaw.com'
-A3='sg2socks.elcavlaw.com'
+A1='sg1socks.elcavlaw.com'
+A2='sg2socks.elcavlaw.com'
+A3='sg3socks.elcavlaw.com'
 
 LOOP_DELAY=5
 
-declare -a HOSTS=('112.198.115.44')
+declare -a HOSTS=('openai.com')
 DIG_EXEC="DEFAULT"
 
 CUSTOM_DIG=/data/data/com.termux/files/home/go/bin/fastdig
@@ -32,13 +29,13 @@ if [ ! $(command -v ${_DIG}) ]; then
  "\$DIG_EXEC & \$CUSTOM_DIG variable inside $( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )/$(basename "$0") file.\n" && exit 1
 fi
 endscript() {
- unset NS A LOOP_DELAY HOSTS _DIG DIG_EXEC CUSTOM_DIG T R M
+ unset A LOOP_DELAY HOSTS _DIG DIG_EXEC CUSTOM_DIG T R M
  exit 1
 }
 trap endscript 2 15
 check(){
  for ((i=0; i<"${#HOSTS[*]}"; i++)); do
-  for R in "${NS}" "${A}" "${NS1}" "${A1}" "${NS2}" "${A2}"; do
+  for R in "${A1}" "${A2}" "${A3}"; do
    T="${HOSTS[$i]}"
      $(timeout -k .3 .3 ${_DIG} @${T} ${R})  && M=31 || M=32;
    echo -e "\e[1;${M}m\$ R:${R} D:${T}\e[0m"
