@@ -1,4 +1,4 @@
-A1='api.ssh.elcavlaw.com'
+A1='178.128.211.108'
 
 LOOP_DELAY=5
 
